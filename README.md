@@ -1,6 +1,6 @@
 ##eXist db Graphviz interface ##
 
-This project provides an interface to the graphviz suite for eXist-db version 2.0. http://exist-db.org 
+This project provides an interface to the graphviz http://www.graphviz.org/ for eXist-db version 2.0. http://exist-db.org 
 
 collection /db/apps/graphviz
 
@@ -14,8 +14,9 @@ The script xquery/managers.xq generates a clickable graph from a database
 dotML is transformed to dot via XSL from http://martin-loetzsch.de/DOTML/ 
 
 ##Prerequites##
-- graphviz has been installed - only dot is used
+- graphviz has been installed
 - exist 2.0 
 
 ##Version 1 limitations##
-- Only SVG is generated
+- only dot is used
+- only SVG is generated
