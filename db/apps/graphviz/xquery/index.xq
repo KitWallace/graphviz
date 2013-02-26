@@ -1,7 +1,5 @@
 (: view samples :)
 import module namespace gv = "http://kitwallace.co.uk/ns/qraphviz" at "../lib/graphviz.xqm";
-declare namespace dotml = "http://www.martin-loetzsch.de/DOTML";
-declare namespace h = "http://www.w3.org/1999/xhtml";
 
 declare variable $sampledir := concat($gv:base,"samples/");
 declare variable $index := concat($sampledir,"library.xml");
