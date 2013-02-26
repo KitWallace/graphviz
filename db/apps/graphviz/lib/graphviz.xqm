@@ -23,7 +23,7 @@ declare function gv:dot-to-svg($graph) {
     then 
       let $options := 
       <options>
-         <stdin><line>{string($graph)}</line></stdin>
+         <stdin><line>{$graph}</line></stdin>
       </options>
      let $result := process:execute(("dot","-Tsvg"), $options)
      let $string := string-join($result/stdout/line[position() > 8],"")  (: lose the fetch of the dtd - need to find a better way:)
