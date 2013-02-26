@@ -1,4 +1,4 @@
-==eXist db Graphviz interface ==
+##eXist db Graphviz interface ##
 
 This project provides an interface to the graphviz suite for eXist-db version 2.0. This interface is provided by the module graphviz.xqm
 
@@ -9,9 +9,9 @@ The script managers.xq generates a clickable graph from a database
 
 DotML is transfored to dot via XSL from http://martin-loetzsch.de/DOTML/ 
 
-==Prerequites==
+##Prerequites##
 - graphviz has been installed - only dot is used
 - exist 2.0 
 
-==Version 1 limitations ==
--Only SVG is generated
+##Version 1 limitations##
+- Only SVG is generated
