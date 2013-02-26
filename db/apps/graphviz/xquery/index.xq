@@ -8,7 +8,7 @@ declare variable $index := concat($sampledir,"library.xml");
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
-let $login := xmldb:login("/db","admin","perdika")
+let $login := xmldb:login("/db","admin","password")
 let $sample := request:get-parameter("sample",())
 let $format := request:get-parameter("format","svg")
 let $items := doc($index)//gv:item
