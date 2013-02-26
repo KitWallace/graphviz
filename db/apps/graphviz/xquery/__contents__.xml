@@ -1,0 +1,18 @@
+<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/graphviz/xquery" owner="admin" group="dba" mode="755" created="2013-02-25T23:28:26Z" version="1">
+    <acl entries="0" version="1"/>
+    <resource type="BinaryResource" name="index2.xq" owner="admin" group="dba" mode="644" created="2013-02-26T08:39:00Z" modified="2013-02-26T09:14:11Z" filename="index2.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="thumbnails.xq" owner="admin" group="dba" mode="644" created="2013-02-25T23:36:00Z" modified="2013-02-25T23:36:00Z" filename="thumbnails.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="graph.xq" owner="admin" group="dba" mode="644" created="2013-02-25T23:38:17Z" modified="2013-02-25T23:39:30Z" filename="graph.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="managers.xq" owner="admin" group="dba" mode="644" created="2013-02-26T09:43:07Z" modified="2013-02-26T09:55:01Z" filename="managers.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+    <resource type="BinaryResource" name="index.xq" owner="admin" group="dba" mode="644" created="2013-02-25T23:55:40Z" modified="2013-02-26T10:10:45Z" filename="index.xq" mimetype="application/xquery">
+        <acl entries="0" version="1"/>
+    </resource>
+</collection>
