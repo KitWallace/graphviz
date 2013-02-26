@@ -1,6 +1,0 @@
-<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/graphviz/xsl" owner="admin" group="dba" mode="755" created="2013-02-25T23:37:05Z" version="1">
-    <acl entries="0" version="1"/>
-    <resource type="XMLResource" name="dotml2dot.xsl" owner="admin" group="dba" mode="644" created="2013-02-25T23:37:09Z" modified="2013-02-25T23:37:09Z" filename="dotml2dot.xsl" mimetype="application/xslt+xml">
-        <acl entries="0" version="1"/>
-    </resource>
-</collection>
