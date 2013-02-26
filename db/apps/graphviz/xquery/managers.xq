@@ -1,6 +1,7 @@
 import module namespace gv = "http://kitwallace.co.uk/ns/qraphviz" at "../lib/graphviz.xqm";
+declare namespace svg = "http://www.w3.org/2000/svg";
+declare namespace dotml ="http://www.martin-loetzsch.de/DOTML";
 
-declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 declare function local:manager-graph ($emps) {
 <dotml:graph>
  { for $emp in $emps/Emp
@@ -23,6 +24,8 @@ declare function local:element-to-table($el) {
    }
    </table>
 };
+
+declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
 let $login := xmldb:login("/db/","admin","password")
 let $empfile := "/db/apps/graphviz/data/empdept.xml"

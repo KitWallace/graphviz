@@ -13,9 +13,12 @@ module namespace gv = "http://kitwallace.co.uk/ns/qraphviz";
 import module namespace process="http://exist-db.org/xquery/process" at "java:org.exist.xquery.modules.process.ProcessModule";
 
 declare namespace svg = "http://www.w3.org/2000/svg";
-
+declare namespace dotml ="http://www.martin-loetzsch.de/DOTML";
 declare variable $gv:base := "/db/apps/graphviz/";
+declare variable $gv:directory := "";  (: directory in which graphviz wil be executed :)
+declare variable $gv:dotcommand := "dot";  (: for unix - need dot.exe for windows :)
 declare variable $gv:dotml2dot := doc(concat($gv:base,"xsl/dotml2dot.xsl"));  
+
 declare function gv:dot-to-svg($graph) {
   let $graph := normalize-space($graph)
   return
@@ -23,9 +26,10 @@ declare function gv:dot-to-svg($graph) {
     then 
       let $options := 
       <options>
+         <workingDir>{$gv:directory}</workingDir>
          <stdin><line>{$graph}</line></stdin>
       </options>
-     let $result := process:execute(("dot","-Tsvg"), $options)
+     let $result := process:execute(($gv:dotcommand,"-Tsvg"), $options)
      let $string := string-join($result/stdout/line[position() > 8],"")  (: lose the fetch of the dtd - need to find a better way:)
      return util:parse($string)
     else ()
