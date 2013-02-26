@@ -19,13 +19,19 @@ declare variable $gv:directory := "";  (: directory in which graphviz wil be exe
 declare variable $gv:dotcommand := "dot";  (: for unix - need dot.exe for windows :)
 declare variable $gv:dotml2dot := doc(concat($gv:base,"xsl/dotml2dot.xsl"));
 
+declare function gv:dot-error($lines) {
+   if (contains($lines[1],"Error"))
+   then concat($lines[1],$lines[2])
+   else ()   
+};
+
 declare function gv:tidy-svg($lines) {
 (: ignore lines up to <svg :)
   if (empty($lines))
   then ()
-  else if (starts-with($lines[1],"<svg")
+  else if (starts-with($lines[1],"<svg"))
   then $lines
-  else gv:tidy-svg(subsequence(lines,2)
+  else gv:tidy-svg(subsequence($lines,2))
 };
 
 declare function gv:dot-to-svg($graph) {
@@ -39,8 +45,14 @@ declare function gv:dot-to-svg($graph) {
          <stdin><line>{$graph}</line></stdin>
       </options>
      let $result := process:execute(($gv:dotcommand,"-Tsvg"), $options)
-     let $string := string-join(gv:tidy-svg($result/stdout/line),"")  
-     return util:parse($string)
+     let $lines := $result/stdout/line
+     let $error := gv:dot-error($lines)
+     return 
+       if (empty($error))
+       then
+           let $string := string-join(gv:tidy-svg($lines),"")  
+           return util:parse($string)
+       else <error>{$error}</error>
     else ()
 };
 
