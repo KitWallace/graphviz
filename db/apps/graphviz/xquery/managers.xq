@@ -30,7 +30,7 @@ declare function local:element-to-table($el) {
    </table>
 };
 
-let $login := xmldb:login("/db/","admin","perdika")
+let $login := xmldb:login("/db/","admin","password")
 let $empfile := "/db/apps/graphviz/data/empdept.xml"
 let $emps:= doc($empfile)/EmpTable
 let $ename := request:get-parameter("emp",())
