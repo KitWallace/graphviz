@@ -8,7 +8,7 @@ declare variable $index := concat($sampledir,"library.xml");
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
-let $login := xmldb:login("/db","admin","password")
+let $login := xmldb:login("/db","admin","perdika")
 let $sample := request:get-parameter("sample",())
 let $format := request:get-parameter("format","svg")
 let $items := doc($index)//gv:item
@@ -26,7 +26,7 @@ return
           {for $item in $items
            return
            <li> 
-                 <a href="?sample={$item/gv:title}">{$item/gv:description/string()}</a> [ {$item/gv:url/@type/string()} ]
+                 <a href="?sample={$item/@id}"> {$item/gv:title/string()}</a> &#160;{$item/gv:description/string()}[ {$item/gv:url/@type/string()} ]
            </li>
           }
           </ul>
@@ -38,7 +38,7 @@ return
        else 
           if ($format="svg")
           then
-            let $item := $items[gv:title=$sample]
+            let $item := $items[@id=$sample]
             let $svg :=
               if ($item/gv:url/@type = "dot")
               then 
@@ -54,13 +54,13 @@ return
             return
            <div> 
              <h2> 
-                 {$item/gv:description/string()} [ {$item/gv:url/@type/string()} ] <a href="?sample={$sample}&amp;format=source">Source</a>
+                 {$item/gv:title/string()} &#160; {$item/gv:description/string()} [ {$item/gv:url/@type/string()} ] <a href="?sample={$sample}&amp;format=source">Source</a>
               </h2>
              {$svg}  
            </div>
          else if ($format="source")
          then 
-            let $item := $items[gv:title=$sample]
+            let $item := $items[@id=$sample]
             let $source :=
               if ($item/gv:url/@type = "dot")
               then 
