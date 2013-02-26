@@ -13,10 +13,10 @@ module namespace gv = "http://kitwallace.co.uk/ns/qraphviz";
 import module namespace process="http://exist-db.org/xquery/process" at "java:org.exist.xquery.modules.process.ProcessModule";
 
 declare namespace svg = "http://www.w3.org/2000/svg";
+declare namespace dotml = "http://www.martin-loetzsch.de/DOTML";
 
 declare variable $gv:base := "/db/apps/graphviz/";
 declare variable $gv:dotml2dot := doc(concat($gv:base,"xsl/dotml2dot.xsl"));  
-declare variable $gv:nl := codepoints-to-string(10);
 declare function gv:dot-to-svg($graph) {
    let $options := 
       <options>

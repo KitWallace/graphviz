@@ -1,24 +1,18 @@
 import module namespace gv = "http://kitwallace.co.uk/ns/qraphviz" at "../lib/graphviz.xqm";
-declare namespace svg = "http://www.w3.org/2000/svg";
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 declare function local:manager-graph ($emps) {
-<graph>
-  digraph {{
+<dotml:graph>
  { for $emp in $emps/Emp
+   let $name := $emp/Ename/string()
    let $mgr := $emps/Emp[EmpNo = $emp/MgrNo]
    where exists($mgr)
    return
-    <link>{$mgr/Ename} -> {$emp/Ename}; {$gv:nl}</link>
+    (<dotml:node id="{$name}" URL="?emp={$name}"/>,
+     <dotml:edge from="{$mgr/Ename}" to="{$emp/Ename}"/>
+    )
  }
- { for $emp in $emps/Emp
-   let $name := $emp/Ename/string()
-   return
-    <node> {$name} [URL="?emp={$name}"]; {$gv:nl}</node>
- }
- 
- }}
-</graph>
+</dotml:graph>
 };
 
 declare function local:element-to-table($el) {
@@ -42,10 +36,11 @@ return
       {if (empty($emp))
        then  
           let $graph := local:manager-graph($emps)
+          let $dot := gv:dotml-to-dot($graph)
           return 
           <div>
              <h2>Click on a name for details</h2>
-             {gv:dot-to-svg($graph)}
+             {gv:dot-to-svg($dot)}
           </div>
        else 
           <div> 
