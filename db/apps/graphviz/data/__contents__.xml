@@ -1,6 +1,0 @@
-<collection xmlns="http://exist.sourceforge.net/NS/exist" name="/db/apps/graphviz/data" owner="admin" group="dba" mode="755" created="2013-02-25T23:37:40Z" version="1">
-    <acl entries="0" version="1"/>
-    <resource type="XMLResource" name="empdept.xml" owner="admin" group="dba" mode="644" created="2013-02-25T23:37:44Z" modified="2013-02-25T23:37:44Z" filename="empdept.xml" mimetype="application/xml">
-        <acl entries="0" version="1"/>
-    </resource>
-</collection>
