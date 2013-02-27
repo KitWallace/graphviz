@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conf>
+    <!-- directory in which graphviz will be executed and temprory files stored-->
+    <directory></directory> 
+    <!-- dot command - for windows use {path}/dot.exe -->
+    <dot-path>dot</dot-path>
+    <!-- relative path to dotmltodotxsl -->
+    <dotml2dot>xsl/dotml2dot.xsl</dotml2dot>       
+</conf>

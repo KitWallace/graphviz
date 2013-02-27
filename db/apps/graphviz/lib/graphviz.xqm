@@ -15,9 +15,8 @@ import module namespace process="http://exist-db.org/xquery/process" at "java:or
 declare namespace svg = "http://www.w3.org/2000/svg";
 declare namespace dotml ="http://www.martin-loetzsch.de/DOTML";
 declare variable $gv:base := "/db/apps/graphviz/";
-declare variable $gv:directory := "";  (: directory in which graphviz wil be executed :)
-declare variable $gv:dotcommand := "dot";  (: for unix - need dot.exe for windows :)
-declare variable $gv:dotml2dot := doc(concat($gv:base,"xsl/dotml2dot.xsl"));
+declare variable $gv:conf := doc(concat($gv:base,"conf.xml"))/conf;
+declare variable $gv:dotml2dot := doc(concat($gv:base,$gv:conf/dotml2dot));
 
 declare function gv:dot-error($lines) {
    if (contains($lines[1],"Error"))
@@ -41,10 +40,10 @@ declare function gv:dot-to-svg($graph) {
     then 
       let $options := 
       <options>
-         <workingDir>{$gv:directory}</workingDir>
+         <workingDir>{$gv:conf/directory/string()}</workingDir>
          <stdin><line>{$graph}</line></stdin>
       </options>
-     let $result := process:execute(($gv:dotcommand,"-Tsvg"), $options)
+     let $result := process:execute(($gv:conf/dot-path,"-Tsvg"), $options)
      let $lines := $result/stdout/line
      let $error := gv:dot-error($lines)
      return 
