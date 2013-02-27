@@ -1,0 +1,72 @@
+<graph xmlns="http://www.martin-loetzsch.de/DOTML" ranksep="0.1" nodesep="0.1" rankdir="LR">
+    <!-- sample output of DocBook to DOT ML -->
+    <!-- the rankdir="LR" attribute draws nodes left to right 
+    #005A9C is a soft blue that will be a link to the chapter -->
+    <sub-graph>
+        <node id="book" label="Making Sense of NoSQL" fontsize="16" style="filled" fillcolor="lightgray" fontname="Arial"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part1" label="Introduction" fontsize="14" style="filled" fillcolor="#FFDDDD" fontname="Arial"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part2" label="NoSQL Patterns" fontsize="14" style="filled" fillcolor="yellow" fontname="Arial"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part3" label="Solutions" fontsize="14" style="filled" fillcolor="lightgreen" fontname="Arial"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part4" label="Advanced" fontsize="14" style="filled" fillcolor="lightblue" fontname="Arial"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter1" label="What is NoSQL" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter2" label="NoSQL Concepts" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter3" label="RDBMS Patterns" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter4" label="NoSQL Patterns" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter5" label="Native XML Databases" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter6" label="Big Data" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter7" label="Search" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter8" label="High Availability" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter9" label="Agility" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter10" label="Functional Programming" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter11" label="Security" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="chapter12" label="Selecting the Right NoSQL System" fontcolor="#005A9C" fontsize="11" style="filled" fontname="Arial" shape="box"/>
+    </sub-graph>
+    <edge from="book" to="part1"/>
+    <edge from="book" to="part2"/>
+    <edge from="book" to="part3"/>
+    <edge from="book" to="part4"/>
+    <edge from="part1" to="chapter1"/>
+    <edge from="part1" to="chapter2"/>
+    <edge from="part2" to="chapter3"/>
+    <edge from="part2" to="chapter4"/>
+    <edge from="part2" to="chapter5"/>
+    <edge from="part3" to="chapter6"/>
+    <edge from="part3" to="chapter7"/>
+    <edge from="part3" to="chapter8"/>
+    <edge from="part3" to="chapter9"/>
+    <edge from="part4" to="chapter10"/>
+    <edge from="part4" to="chapter11"/>
+    <edge from="part4" to="chapter12"/>
+</graph>
