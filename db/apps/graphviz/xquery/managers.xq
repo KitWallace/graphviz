@@ -1,18 +1,29 @@
-import module namespace gv = "http://kitwallace.co.uk/ns/qraphviz" at "../lib/graphviz.xqm";
+import module namespace gv = "http://kitwallace.co.uk/ns/qraphviz" at "/db/apps/graphviz/lib/graphviz.xqm";
 declare namespace svg = "http://www.w3.org/2000/svg";
 declare namespace dotml ="http://www.martin-loetzsch.de/DOTML";
 
 declare function local:manager-graph ($emps) {
+let $dept-colours := 
+  <colours>
+     <colour dept="10" name="red"/>
+     <colour dept="20" name="green"/>
+     <colour dept="30" name="blue"/>
+     <colour dept="40" name="yellow"/>
+  </colours>
+return
 <dotml:graph>
  { for $emp in $emps/Emp
-   let $name := $emp/Ename/string()
+   let $colour := $dept-colours/colour[@dept=$emp/DeptNo]/@name/string()
+   return
+    <dotml:node id="{$emp/Ename}" URL="?emp={$emp/EmpNo}" style="filled" fillcolor="{$colour}"/>
+ }
+ { for $emp in $emps/Emp
    let $mgr := $emps/Emp[EmpNo = $emp/MgrNo]
    where exists($mgr)
    return
-    (<dotml:node id="{$name}" URL="?emp={$name}"/>,
      <dotml:edge from="{$mgr/Ename}" to="{$emp/Ename}"/>
-    )
  }
+
 </dotml:graph>
 };
 
@@ -28,28 +39,27 @@ declare function local:element-to-table($el) {
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
 let $login := xmldb:login("/db/","admin","password")
-let $empfile := "/db/apps/graphviz/data/empdept.xml"
+let $empfile := "/db/apps/graphviz/apps/empdept/empdept.xml"
 let $emps:= doc($empfile)/EmpTable
-let $ename := request:get-parameter("emp",())
-let $emp := $emps/Emp[Ename = $ename]
+let $graph := local:manager-graph($emps)
+let $dot := gv:dotml-to-dot($graph)
+let $empNo := request:get-parameter("emp",())
+let $emp := $emps/Emp[EmpNo = $empNo]
+
 return 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <body>
-      <h1>Empdept data <a href="../data/empdept.xml">raw data</a></h1>
-      {if (empty($emp))
-       then  
-          let $graph := local:manager-graph($emps)
-          let $dot := gv:dotml-to-dot($graph)
-          return 
-          <div>
-             <h2>Click on a name for details</h2>
-             {gv:dot-to-svg($dot)}
-          </div>
-       else 
-          <div> 
-              <h2><a href="?">Managers</a></h2>
-              {local:element-to-table($emp)}
-          </div>
-      }
+      <center><h2>Empdept data <a href="empdept.xml">raw data</a> (Click on a name for details)</h2></center>
+      <hr/>
+      <table>
+      <tr>
+         <td>
+          {gv:dot-to-svg($dot)}
+         </td>
+         <td>     
+          {local:element-to-table($emp)}
+         </td>
+      </tr>
+      </table>
 </body>
 </html>
