@@ -40,5 +40,14 @@
         <url type="dot">record.gv</url>
         <description>Graphviz record example</description>
     </item>
-   
+    <item id="G9">
+        <title>Book Outline</title>
+        <url type="dotml">book-outline.xml</url>
+        <description>Sample left-to right book outline chapters only.</description>
+    </item>
+    <item id="G10">
+        <title>Book Outline With Sections</title>
+        <url type="dotml">book-outline-sections.xml</url>
+        <description>Sample left-to right book outline with sections.</description>
+    </item>
 </items>

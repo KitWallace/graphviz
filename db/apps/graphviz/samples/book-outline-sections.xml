@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graph ranksep="0.1" nodesep="0.1" rankdir="LR" xmlns="http://www.martin-loetzsch.de/DOTML">
+    <node id="book" label="Making Sense of NoSQL" fontsize="16" style="filled" fillcolor="lightgray" fontname="Arial" URL="http://manning.com/mccreary"/>
+    <sub-graph>
+        <node id="part1" label="Pt1 Introduction" fontname="Arial" style="filled" fillcolor="pink"/>
+        <edge from="book" to="part1" arrowhead="none"/>
+        <node id="ch1" label="Ch1 NoSQL: It's about making intelligent choices" fontname="Arial" style="filled" fillcolor="pink" URL="http://manning.com/mccreary/MSoNS_meap_ch01.pdf"/>
+        <edge from="part1" to="ch1" arrowhead="none"/>
+        <node id="c1s1" label="1.1 What is NoSQL?" shape="box"/>
+        <edge from="ch1" to="c1s1"/>
+        <node id="c1s2" label="1.2 NoSQL business drivers" shape="box"/>
+        <edge from="ch1" to="c1s2"/>
+        <node id="c1s3" label="1.3 NoSQL case studies" shape="box"/>
+        <edge from="ch1" to="c1s3"/>
+        <node id="c1s4" label="1.4 Summary" shape="box"/>
+        <edge from="ch1" to="c1s4"/>
+        <node id="ch2" label="Ch2 NoSQL concepts" fontname="Arial" style="filled" fillcolor="pink"/>
+        <edge from="part1" to="ch2" arrowhead="none"/>
+        <node id="c2s1" label="2.1 Keeping components simple to promote reuse" shape="box"/>
+        <edge from="ch2" to="c2s1"/>
+        <node id="c2s2" label="2.2 Using application tiers to simplify design" shape="box"/>
+        <edge from="ch2" to="c2s2"/>
+        <node id="c2s3" label="2.3 Speeding performance by strategic use of RAM, SSD and disk" shape="box"/>
+        <edge from="ch2" to="c2s3"/>
+        <node id="c2s4" label="2.4 Using consistent hashing to keep your cache current" shape="box"/>
+        <edge from="ch2" to="c2s4"/>
+        <node id="c2s5" label="2.5 Comparing ACID and BASE - two methods of reliable database transactions" shape="box"/>
+        <edge from="ch2" to="c2s5"/>
+        <node id="c2s6" label="2.6 Archiving horizontal scalability with database sharding" shape="box"/>
+        <edge from="ch2" to="c2s6"/>
+        <node id="c2s7" label="2.7 Understanding trade-offs with Brewer's CAP theorem" shape="box"/>
+        <edge from="ch2" to="c2s7"/>
+        <node id="c2s8" label="2.8 Apply your knowledge" shape="box"/>
+        <edge from="ch2" to="c2s8"/>
+        <node id="c2s9" label="2.9 Summary" shape="box"/>
+        <edge from="ch2" to="c2s9"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part2" label="Pt2 NoSQL Architectural Patterns" fontname="Arial" style="filled" fillcolor="yellow"/>
+        <edge from="book" to="part2" arrowhead="none"/>
+        <node id="ch3" label="Ch3 Foundational data architecture patterns" fontname="Arial" style="filled" fillcolor="yellow"/>
+        <edge from="part2" to="ch3" arrowhead="none"/>
+        <node id="c3s1" label="3.1 What is a data architecture pattern?" shape="box"/>
+        <edge from="ch3" to="c3s1"/>
+        <node id="c3s2" label="3.2 Understanding the row-store design pattern used in RDBMSs" shape="box"/>
+        <edge from="ch3" to="c3s2"/>
+        <node id="c3s3" label="3.3 Example: Using joins in a sales order" shape="box"/>
+        <edge from="ch3" to="c3s3"/>
+        <node id="c3s4" label="3.4 Reviewing RDBMS implementation features " shape="box"/>
+        <edge from="ch3" to="c3s4"/>
+        <node id="c3s5" label="3.5 Analyzing historical data with data warehouse and business intelligence systems" shape="box"/>
+        <edge from="ch3" to="c3s5"/>
+        <node id="c3s6" label="3.6 Incorporating high-availability and read-mostly systems" shape="box"/>
+        <edge from="ch3" to="c3s6"/>
+        <node id="c3s7" label="3.7 Using hash trees in revision control systems and databases synchronization " shape="box"/>
+        <edge from="ch3" to="c3s7"/>
+        <node id="c3s8" label="3.8 Apply your knowledge" shape="box"/>
+        <edge from="ch3" to="c3s8"/>
+        <node id="c3s9" label="3.9 Summary" shape="box"/>
+        <edge from="ch3" to="c3s9"/>
+        <node id="ch4" label="Ch4 NoSQL data architecture patterns" fontname="Arial" style="filled" fillcolor="yellow"/>
+        <edge from="part2" to="ch4" arrowhead="none"/>
+        <node id="c4s1" label="4.1 Key-value stores" shape="box"/>
+        <edge from="ch4" to="c4s1"/>
+        <node id="c4s2" label="4.2 Graph stores" shape="box"/>
+        <edge from="ch4" to="c4s2"/>
+        <node id="c4s3" label="4.3 Column family (Bigtable) stores" shape="box"/>
+        <edge from="ch4" to="c4s3"/>
+        <node id="c4s4" label="4.4 Document stores" shape="box"/>
+        <edge from="ch4" to="c4s4"/>
+        <node id="c4s5" label="4.5 Variations of NoSQL architectural patterns" shape="box"/>
+        <edge from="ch4" to="c4s5"/>
+        <node id="c4s6" label="4.6 Summary" shape="box"/>
+        <edge from="ch4" to="c4s6"/>
+        <node id="ch5" label="Ch5 Native XML databases" fontname="Arial" style="filled" fillcolor="yellow"/>
+        <edge from="part2" to="ch5" arrowhead="none"/>
+        <node id="c5s1" label="5.1 What is a Native XML database?" shape="box"/>
+        <edge from="ch5" to="c5s1"/>
+        <node id="c5s2" label="5.2 Using a native XML database" shape="box"/>
+        <edge from="ch5" to="c5s2"/>
+        <node id="c5s3" label="5.3 Using XML standards within native XML databases" shape="box"/>
+        <edge from="ch5" to="c5s3"/>
+        <node id="c5s4" label="5.4 Designing and validating your data with XML Schema and Schematron" shape="box"/>
+        <edge from="ch5" to="c5s4"/>
+        <node id="c5s5" label="5.5 Extending XQuery with custom modules" shape="box"/>
+        <edge from="ch5" to="c5s5"/>
+        <node id="c5s6" label="5.6 Case study: Use of TEI in the Office of the Historian at the State Department" shape="box"/>
+        <edge from="ch5" to="c5s6"/>
+        <node id="c5s7" label="5.7 Case study: Managing financial derivatives with MarkLogic" shape="box"/>
+        <edge from="ch5" to="c5s7"/>
+        <node id="c5s8" label="5.8 Summary" shape="box"/>
+        <edge from="ch5" to="c5s8"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part3" label="Pt3 NoSQL Solutions" fontname="Arial" style="filled" fillcolor="lightgreen"/>
+        <edge from="book" to="part3" arrowhead="none"/>
+        <node id="ch6" label="Ch6 Using NoSQL to manage Big Data" fontname="Arial" style="filled" fillcolor="lightgreen"/>
+        <edge from="part3" to="ch6" arrowhead="none"/>
+        <node id="c6s1" label="6.1 What is a Big Data NoSQL Solution?" shape="box"/>
+        <edge from="ch6" to="c6s1"/>
+        <node id="c6s2" label="6.2 Understanding the types of Big Data problems" shape="box"/>
+        <edge from="ch6" to="c6s2"/>
+        <node id="c6s3" label="6.3 Using a shared-nothing architecture to attack most (but not all) Big Data analysis problems" shape="box"/>
+        <edge from="ch6" to="c6s3"/>
+        <node id="c6s4" label="6.4 Choosing distribution models: master-slave versus peer-to-peer" shape="box"/>
+        <edge from="ch6" to="c6s4"/>
+        <node id="c6s5" label="6.5 Using MapReduce to transform your data over distributed systems" shape="box"/>
+        <edge from="ch6" to="c6s5"/>
+        <node id="c6s6" label="6.6 Four ways that NoSQL systems handle Big Data problems" shape="box"/>
+        <edge from="ch6" to="c6s6"/>
+        <node id="c6s7" label="6.7 Case Study: Event log processing with Apache Flume" shape="box"/>
+        <edge from="ch6" to="c6s7"/>
+        <node id="c6s8" label="6.8 Case study: Computer aided discovery of health care fraud through relationship analytics" shape="box"/>
+        <edge from="ch6" to="c6s8"/>
+        <node id="c6s9" label="6.9 Summary" shape="box"/>
+        <edge from="ch6" to="c6s9"/>
+        <node id="ch7" label="Ch7 Finding information with NoSQL search" fontname="Arial" style="filled" fillcolor="lightgreen"/>
+        <edge from="part3" to="ch7" arrowhead="none"/>
+        <node id="c7s1" label="7.1 What is NoSQL search?" shape="box"/>
+        <edge from="ch7" to="c7s1"/>
+        <node id="c7s2" label="7.2 Types of search" shape="box"/>
+        <edge from="ch7" to="c7s2"/>
+        <node id="c7s3" label="7.3 Getting the most out of NoSQL search" shape="box"/>
+        <edge from="ch7" to="c7s3"/>
+        <node id="c7s4" label="7.4 Measuring search quality" shape="box"/>
+        <edge from="ch7" to="c7s4"/>
+        <node id="c7s5" label="7.5 Comparing in-node index versus remote search services" shape="box"/>
+        <edge from="ch7" to="c7s5"/>
+        <node id="c7s6" label="7.6 Case study: using MapReduce to create reverse indexes" shape="box"/>
+        <edge from="ch7" to="c7s6"/>
+        <node id="c7s7" label="7.7 Case study: searching technical documentation" shape="box"/>
+        <edge from="ch7" to="c7s7"/>
+        <node id="c7s8" label="7.8 Case study: searching domain-specific languages - findability and reuse" shape="box"/>
+        <edge from="ch7" to="c7s8"/>
+        <node id="c7s9" label="7.9 Apply your knowledge" shape="box"/>
+        <edge from="ch7" to="c7s9"/>
+        <node id="c7s10" label="7.10 Summary" shape="box"/>
+        <edge from="ch7" to="c7s10"/>
+        <node id="ch8" label="Ch8 Building high availability solutions with NoSQL" fontname="Arial" style="filled" fillcolor="lightgreen"/>
+        <edge from="part3" to="ch8" arrowhead="none"/>
+        <node id="c8s1" label="8.1 What is a high availability NoSQL database?" shape="box"/>
+        <edge from="ch8" to="c8s1"/>
+        <node id="c8s2" label="8.2 Measuring availability of NoSQL databases" shape="box"/>
+        <edge from="ch8" to="c8s2"/>
+        <node id="c8s3" label="8.3 NoSQL strategies for high-availability" shape="box"/>
+        <edge from="ch8" to="c8s3"/>
+        <node id="c8s4" label="8.4 Case study: using Apache Cassandra as a high-availability column family store" shape="box"/>
+        <edge from="ch8" to="c8s4"/>
+        <node id="c8s5" label="8.5 Case study: using Couchbase as a high-availability document store" shape="box"/>
+        <edge from="ch8" to="c8s5"/>
+        <node id="c8s6" label="8.6 Summary" shape="box"/>
+        <edge from="ch8" to="c8s6"/>
+        <node id="ch9" label="Ch9 Increasing agility with NoSQL" fontname="Arial" style="filled" fillcolor="lightgreen"/>
+        <edge from="part3" to="ch9" arrowhead="none"/>
+        <node id="c9s1" label="9.1 What is software agility?" shape="box"/>
+        <edge from="ch9" to="c9s1"/>
+        <node id="c9s2" label="9.2 Measuring agility" shape="box"/>
+        <edge from="ch9" to="c9s2"/>
+        <node id="c9s3" label="9.3 Using document stores to avoid object-relational mapping" shape="box"/>
+        <edge from="ch9" to="c9s3"/>
+        <node id="c9s4" label="9.4 Case study: using XRX to manage complex forms" shape="box"/>
+        <edge from="ch9" to="c9s4"/>
+        <node id="c9s5" label="9.5 Summary" shape="box"/>
+        <edge from="ch9" to="c9s5"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part4" label="Pt4 Advanced Topics" fontname="Arial" style="filled" fillcolor="lightblue"/>
+        <edge from="book" to="part4" arrowhead="none"/>
+        <node id="ch10" label="Ch10 NoSQL and functional programming" fontname="Arial" style="filled" fillcolor="lightblue"/>
+        <edge from="part4" to="ch10" arrowhead="none"/>
+        <node id="c10s1" label="10.1 What is functional programming?" shape="box"/>
+        <edge from="ch10" to="c10s1"/>
+        <node id="c10s2" label="10.2 Case study: using NetKernel to optimize web page content assembly" shape="box"/>
+        <edge from="ch10" to="c10s2"/>
+        <node id="c10s3" label="10.3 Examples of functional programming languages" shape="box"/>
+        <edge from="ch10" to="c10s3"/>
+        <node id="c10s4" label="10.4 Making the transition from imperative to functional programming" shape="box"/>
+        <edge from="ch10" to="c10s4"/>
+        <node id="c10s5" label="10.5 Case Study: Building NoSQL systems with Erlang" shape="box"/>
+        <edge from="ch10" to="c10s5"/>
+        <node id="c10s6" label="10.6 Apply your knowledge" shape="box"/>
+        <edge from="ch10" to="c10s6"/>
+        <node id="c10s7" label="10.7 Summary" shape="box"/>
+        <edge from="ch10" to="c10s7"/>
+        <node id="ch11" label="Ch11 Security: protecting data in your NoSQL systems" fontname="Arial" style="filled" fillcolor="lightblue"/>
+        <edge from="part4" to="ch11" arrowhead="none"/>
+        <node id="c11s1" label="11.1 A security model for NoSQL databases" shape="box"/>
+        <edge from="ch11" to="c11s1"/>
+        <node id="c11s2" label="11.2 Gathering your security requirements for authentication, authorization, audit and encryption " shape="box"/>
+        <edge from="ch11" to="c11s2"/>
+        <node id="c11s3" label="11.3 Case Study: access controls on key-value store - Amazon S3" shape="box"/>
+        <edge from="ch11" to="c11s3"/>
+        <node id="c11s4" label="11.4 Case study: using key visibility with Apache Accumulo" shape="box"/>
+        <edge from="ch11" to="c11s4"/>
+        <node id="c11s5" label="11.5 Case study: using MarkLogic's RBAC model in secure publishing" shape="box"/>
+        <edge from="ch11" to="c11s5"/>
+        <node id="c11s6" label="11.6 Summary" shape="box"/>
+        <edge from="ch11" to="c11s6"/>
+        <node id="ch12" label="Ch12 Selecting the right NoSQL solution" fontname="Arial" style="filled" fillcolor="lightblue"/>
+        <edge from="part4" to="ch12" arrowhead="none"/>
+        <node id="c12s1" label="12.1 What is architecture trade-off analysis?" shape="box"/>
+        <edge from="ch12" to="c12s1"/>
+        <node id="c12s2" label="12.2 Team dynamics of database architecture selection" shape="box"/>
+        <edge from="ch12" to="c12s2"/>
+        <node id="c12s3" label="12.3 Steps in architectural trade-off analysis" shape="box"/>
+        <edge from="ch12" to="c12s3"/>
+        <node id="c12s4" label="12.4 Analysis through decomposition: building NoSQL quality trees" shape="box"/>
+        <edge from="ch12" to="c12s4"/>
+        <node id="c12s5" label="12.5 Communicating the results to stakeholders" shape="box"/>
+        <edge from="ch12" to="c12s5"/>
+        <node id="c12s6" label="12.6 Finding the right proof-of-architecture pilot project - the Goldilocks project" shape="box"/>
+        <edge from="ch12" to="c12s6"/>
+        <node id="c12s7" label="12.7 Summary" shape="box"/>
+        <edge from="ch12" to="c12s7"/>
+    </sub-graph>
+</graph>

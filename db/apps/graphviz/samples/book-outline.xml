@@ -1,0 +1,43 @@
+<graph ranksep="0.1" nodesep="0.1" rankdir="LR" xmlns="http://www.martin-loetzsch.de/DOTML">
+    <node id="book" label="Making Sense of NoSQL" fontsize="16" style="filled" fillcolor="lightgray" fontname="Arial" URL="http://manning.com/mccreary"/>
+    <sub-graph>
+        <node id="part1" label="Pt1 Introduction" fontname="Arial" style="filled" fillcolor="pink"/>
+        <edge from="book" to="part1" arrowhead="none"/>
+        <node id="ch1" label="Ch1 NoSQL: It's about making intelligent choices" fontname="Arial" shape="box" URL="http://manning.com/mccreary/MSoNS_meap_ch01.pdf"/>
+        <edge from="part1" to="ch1" arrowhead="none"/>
+        <node id="ch2" label="Ch2 NoSQL concepts" fontname="Arial" shape="box"/>
+        <edge from="part1" to="ch2" arrowhead="none"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part2" label="Pt2 NoSQL Architectural Patterns" fontname="Arial" style="filled" fillcolor="yellow"/>
+        <edge from="book" to="part2" arrowhead="none"/>
+        <node id="ch3" label="Ch3 Foundational data architecture patterns" fontname="Arial" shape="box"/>
+        <edge from="part2" to="ch3" arrowhead="none"/>
+        <node id="ch4" label="Ch4 NoSQL data architecture patterns" fontname="Arial" shape="box"/>
+        <edge from="part2" to="ch4" arrowhead="none"/>
+        <node id="ch5" label="Ch5 Native XML databases" fontname="Arial" shape="box"/>
+        <edge from="part2" to="ch5" arrowhead="none"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part3" label="Pt3 NoSQL Solutions" fontname="Arial" style="filled" fillcolor="lightgreen"/>
+        <edge from="book" to="part3" arrowhead="none"/>
+        <node id="ch6" label="Ch6 Using NoSQL to manage Big Data" fontname="Arial" shape="box"/>
+        <edge from="part3" to="ch6" arrowhead="none"/>
+        <node id="ch7" label="Ch7 Finding information with NoSQL search" fontname="Arial" shape="box"/>
+        <edge from="part3" to="ch7" arrowhead="none"/>
+        <node id="ch8" label="Ch8 Building high availability solutions with NoSQL" fontname="Arial" shape="box"/>
+        <edge from="part3" to="ch8" arrowhead="none"/>
+        <node id="ch9" label="Ch9 Increasing agility with NoSQL" fontname="Arial" shape="box"/>
+        <edge from="part3" to="ch9" arrowhead="none"/>
+    </sub-graph>
+    <sub-graph>
+        <node id="part4" label="Pt4 Advanced Topics" fontname="Arial" style="filled" fillcolor="lightblue"/>
+        <edge from="book" to="part4" arrowhead="none"/>
+        <node id="ch10" label="Ch10 NoSQL and functional programming" fontname="Arial" shape="box"/>
+        <edge from="part4" to="ch10" arrowhead="none"/>
+        <node id="ch11" label="Ch11 Security: protecting data in your NoSQL systems" fontname="Arial" shape="box"/>
+        <edge from="part4" to="ch11" arrowhead="none"/>
+        <node id="ch12" label="Ch12 Selecting the right NoSQL solution" fontname="Arial" shape="box"/>
+        <edge from="part4" to="ch12" arrowhead="none"/>
+    </sub-graph>
+</graph>
