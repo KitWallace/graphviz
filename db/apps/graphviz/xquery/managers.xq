@@ -1,4 +1,4 @@
-import module namespace gv = "http://kitwallace.co.uk/ns/qraphviz" at "/db/apps/graphviz/lib/graphviz.xqm";
+import module namespace gv = "http://kitwallace.co.uk/ns/qraphviz" at "../lib/graphviz.xqm";
 declare namespace svg = "http://www.w3.org/2000/svg";
 declare namespace dotml ="http://www.martin-loetzsch.de/DOTML";
 
@@ -39,7 +39,7 @@ declare function local:element-to-table($el) {
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
 let $login := xmldb:login("/db/","admin","password")
-let $empfile := "/db/apps/graphviz/apps/empdept/empdept.xml"
+let $empfile := "/db/apps/graphviz/data/empdept.xml"
 let $emps:= doc($empfile)/EmpTable
 let $graph := local:manager-graph($emps)
 let $dot := gv:dotml-to-dot($graph)
@@ -49,7 +49,7 @@ let $emp := $emps/Emp[EmpNo = $empNo]
 return 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <body>
-      <center><h2>Empdept data <a href="empdept.xml">raw data</a> (Click on a name for details)</h2></center>
+      <center><h2>Empdept data <a href="../data/empdept.xml">raw data</a> (Click on a name for details)</h2></center>
       <hr/>
       <table>
       <tr>
