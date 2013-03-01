@@ -1,4 +1,4 @@
-module namespace gv = "http://kitwallace.co.uk/ns/qraphviz";
+module namespace gv = "http://kitwallace.co.uk/ns/graphviz";
 (:~
 : Module for working with graphviz
 :    prerequisites

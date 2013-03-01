@@ -1,4 +1,4 @@
-import module namespace gv = "http://kitwallace.co.uk/ns/qraphviz" at "../lib/graphviz.xqm";
+import module namespace gv = "http://kitwallace.co.uk/ns/graphviz" at "../lib/graphviz.xqm";
 declare namespace svg = "http://www.w3.org/2000/svg";
 declare namespace dotml ="http://www.martin-loetzsch.de/DOTML";
 
@@ -27,7 +27,14 @@ declare function local:element-to-table($el) {
 
 declare option exist:serialize "method=xhtml media-type=application/xhtml+xml";
 
-let $login := xmldb:login("/db/","admin","password")
+let $isDba := xmldb:is-admin-user(xmldb:get-current-user())
+return
+    if (not($isDba)) then
+        <div class="warn">
+            <p>You have to be a member of the dba group. Please log in using the dashboard and retry.</p>
+        </div>
+else 
+
 let $empfile := "/db/apps/graphviz/data/empdept.xml"
 let $emps:= doc($empfile)/EmpTable
 let $ename := request:get-parameter("emp",())
