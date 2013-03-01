@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>An interface to the graphviz for eXist-db</description>
+    <author>Kit Wallace</author>
+    <website>https://github.com/KitWallace/graphviz</website>
+    <status>alpha</status>
+    <license>GNU-LGPL</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>graphviz</target>
+    <prepare/>
+    <finish/>
+</meta>
