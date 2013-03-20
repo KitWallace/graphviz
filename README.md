@@ -20,3 +20,6 @@ dotML is transformed to dot via XSL from http://martin-loetzsch.de/DOTML/
 ##Version 1 limitations##
 - only dot is used
 - only SVG is generated
+- 
+## Demo ##
+An interactive version is at http://kitwallace.co.uk/graphviz/xquery/home.xq
