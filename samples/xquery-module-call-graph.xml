@@ -1,0 +1,29 @@
+<!-- sample XQuery call graph with two modules.
+    Module A has three functions, a, b, and c where a calls b and c.
+    Module B has three functions d, e, and f where b calls e and f.
+    a also calls d which must be placed outside and after the module clusters.
+    -->
+<graph xmlns="http://www.martin-loetzsch.de/DOTML"  rankdir="LR" bgcolor="silver">
+    <cluster id="m1" bgcolor="yellow" label="module A">
+        <!-- each function within a module is a node -->
+        <node id="m1a" label="a"/>
+        <node id="m1b" label="b"/>
+        <node id="m1c" label="c"/>
+        <!-- each call to another function generates an edge -->
+        <edge from="m1a" to="m1b"/>
+        <edge from="m1a" to="m1c"/>   
+    </cluster>
+    
+    <cluster id="m2" bgcolor="pink"  label="module B">
+        <!-- each function within a module is a node -->
+        <node id="m2d" label="d"/>
+        <node id="m2e" label="e"/>
+        <node id="m2f" label="f"/>
+        <!-- each call to another function generates an edge -->
+        <edge from="m2d" to="m2e"/>
+        <edge from="m2d" to="m2f"/>
+    </cluster>
+    
+    <!-- inter module calls must be placed AFTER the modules themselves -->
+    <edge from="m1c" to="m2d"/>
+</graph>
