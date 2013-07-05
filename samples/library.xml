@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<items xmlns = "http://kitwallace.co.uk/ns/graphviz">
+<items xmlns="http://kitwallace.co.uk/ns/qraphviz">
     <item id="G1">
         <title>Process</title>
         <url type="dot">process.gv</url>
@@ -49,5 +48,10 @@
         <title>Book Outline With Sections</title>
         <url type="dotml">book-outline-sections.xml</url>
         <description>Sample left-to right book outline with sections.</description>
+    </item>
+    <item id="G11">
+        <title>XQuery Module Call Graph</title>
+        <url type="dotml">xquery-module-call-graph.xml</url>
+        <description>Sample left-to right call graph using cluster for each graph.</description>
     </item>
 </items>
