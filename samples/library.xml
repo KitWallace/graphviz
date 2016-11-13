@@ -1,4 +1,4 @@
-<items xmlns="http://kitwallace.co.uk/ns/qraphviz">
+<items xmlns="http://kitwallace.co.uk/ns/graphviz">
     <item id="G1">
         <title>Process</title>
         <url type="dot">process.gv</url>
